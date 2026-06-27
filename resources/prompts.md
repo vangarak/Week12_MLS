@@ -21,15 +21,16 @@ remote repo https://github.com/<your-username>/<your-repo>
 ## Step 5: Connect to EC2 & Install Docker
 
 ```
-Connect to the EC2 instance <ec2-public-dns> and install the latest version of
-docker on the instance. The ssh key is located in @~/.ssh/<key-file.pem>
+Connect to the EC2 instance <ec2-public-dns> and install the latest version of docker on the instance. The ssh key is located in @~/.ssh/my-ec2-key.pem
+Default SSH user:
+On Ubuntu AMIs the login user is ubuntu (not ec2-user, which is for Amazon Linux). If you get Permission denied (publickey), the username is usually the culprit.
+Group membership: adding ubuntu to the docker group only takes effect in a new session, so reconnect (or use sudo docker) before running Docker without sudo.
 ```
 
 ## Step 6: Clone the repo onto EC2
 
 ```
-Clone the github repo https://github.com/<your-username>/<your-repo> on the
-EC2 instance.
+Clone the github repo https://github.com/vangarak/Week12_MLS.git on the EC2 instance.
 ```
 
 ## Step 7: Build the two Docker images
@@ -47,5 +48,5 @@ Use scp to copy the .env file from the backend folder on my local machine to the
 ## Step 9: Run the two containers
 
 ```
-Run the two containers on the EC2 instance. I have created a .env file at ~/<your-repo>/threadhive-backend/.env and configured the security group. Run the backend on port 8080 loading variables with --env-file, and the frontend on port 3000. Use --restart unless-stopped for both containers.
+Run the two containers on the EC2 instance. I have created a .env file at /home/ubuntu/Week12_MLS/threadhive-backend/.env in EC2 and configured the security group. Run the backend on port 8080 loading variables with --env-file, and the frontend on port 3000. Use --restart unless-stopped for both containers. Also SEED_DB=true for the backend container. Make sure the backend container is running before starting the frontend container.
 ```
