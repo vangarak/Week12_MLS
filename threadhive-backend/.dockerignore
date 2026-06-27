@@ -1,0 +1,15 @@
+# Never bake secrets into the image — env vars are injected at runtime
+.env
+.env.*
+
+# Dependencies are installed inside the image
+node_modules
+
+# Dev / VCS / build artifacts not needed at runtime
+tests
+.git
+.gitignore
+Dockerfile
+.dockerignore
+npm-debug.log*
+*.md

@@ -2,11 +2,7 @@
 
 
 ```
-Help me create Dockerfiles for the frontend and backend apps. Frontend will run
-on port 3000 and backend on 8080. Keep the docker files separate and do not use
-docker compose. Use nginx to serve the frontend files. For the backend, do not
-copy the .env file into the Docker image: the env variables will be injected
-using a env file separately.
+Help me create Dockerfiles for the frontend and backend apps. Frontend will run on port 3000 and backend on 8080. Keep the docker files separate and do not use docker compose. Use nginx to serve the frontend files. For the backend, do not copy the .env file into the Docker image: the env variables will be injected using a env file separately.
 ```
 
 ## Step 2: Make the frontend API URL configurable

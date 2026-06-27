@@ -1,0 +1,14 @@
+# Dependencies and build output are produced inside the image
+node_modules
+dist
+
+# Dev / VCS / test artifacts not needed for the build
+.git
+.gitignore
+Dockerfile
+.dockerignore
+coverage
+tests
+*.md
+.env
+.env.*
